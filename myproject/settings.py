@@ -19,7 +19,7 @@ SECRET_KEY = 'django-insecure-d+hh^+ww+ei3r6suor5a+7g8zf2+$u@5@$9l#@8@z=!45t8nzt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -114,6 +114,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 
@@ -127,9 +128,6 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-DEFAULT_FROM_EMAIL = "potentialsunny47@gmail.com"
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-
 
 # Palpal settings 
 
@@ -137,7 +135,7 @@ PAYPAL_TEST = True
 # PAYPAL_TEST = False
 
 PAYPAL_RECEIVER_EMAIL = env('PAYPAL_PUBLIC_KEY')
-# PAYPAL_RECEIVER_EMAIL = 'potentialsunny47@gmail.com'
+# PAYPAL_RECEIVER_EMAIL = 'email'
 
 PAYSTACK_SECRET_KEY = env('PAYSTACK_SECRET_KEY')
 PAYSTACK_PUBLIC_KEY = env('PAYSTACK_PUBLIC_KEY')
