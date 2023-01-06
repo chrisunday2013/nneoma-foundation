@@ -1,3 +1,2 @@
 
-
-python manage.py migrate && gunicorn myproject.wsgi 
+web: gunicorn myproject.wsgi --log-file -
