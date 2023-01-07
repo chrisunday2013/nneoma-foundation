@@ -32,19 +32,24 @@
      <div class="container">
            <div class="d-flex row justify-content-center align-items-center py-md-5 py-3" style="min-height: 90vh;">
                 <div class="col-12">
-                    <h1 class="mb-5">Make your donations here</h1>
+                  <img src="{% static 'assets/img/testimonials/paystack2.png ' %}" class="text-center mb-3 img-fluid" alt="">
+                    <h3 class="mb-5">Make your donations using PayStack</h3>
                     <form action="." method="POST">
                         <h4>Enter amount</h4>
                         <hr>
                          {% csrf_token %}
                          {{ payment_form | crispy }}
                          <p>
-                            <input class="btn btn-primary mt-3" type="submit" value="submit">
+                            <input class="btn btn-primary mt-2" type="submit" value="submit">
                          </p>
                     </form>
-                </div>
-           </div>
-     </div>
+                    <h3 class="mt-5">Click image below to pay with PayPal<h3>
+                    <a href="https://www.paypal.com/donate/?hosted_button_id=YA48G2CLPGRHS"><img src="{% static 'assets/img/testimonials/paypal3png.png ' %}" class="text-center mt-3" alt=""></a>
+                </div> 
+            </div>      
+                    
+      </div>
+
 
 </body>
 </html> 
