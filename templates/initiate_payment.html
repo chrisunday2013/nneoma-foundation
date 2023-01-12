@@ -35,9 +35,9 @@
                   <img src="{% static 'assets/img/testimonials/paystack2.png ' %}" class="text-center mb-3 img-fluid" alt="">
                     <h3 class="mb-5">Make your donations using PayStack</h3>
                     <form action="." method="POST">
+                        {% csrf_token %}
                         <h4>Enter amount</h4>
                         <hr>
-                         {% csrf_token %}
                          {{ payment_form | crispy }}
                          <p>
                             <input class="btn btn-primary mt-2" type="submit" value="submit">

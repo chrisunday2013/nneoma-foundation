@@ -9,12 +9,12 @@ import uuid
 from django.urls import reverse 
 from django.contrib import messages
 from . import forms 
-from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.csrf import csrf_protect,  csrf_exempt, requires_csrf_token
 
 
 
 
-@csrf_protect
+@requires_csrf_token
 def index(request):
 
     n=''
@@ -34,7 +34,7 @@ def index(request):
 
     return render(request, 'index.html' , {'testimonials': testimonials, "portfolios":portfolios, "teams": teams})
 
-@csrf_protect
+@requires_csrf_token
 def home(request):
     host = request.get_host()
     paypal_dict = {
@@ -52,24 +52,28 @@ def home(request):
     context = {'form':form}
     return render(request, 'home.html', context)
 
-@csrf_protect
+
+@requires_csrf_token
 def paypal_return(request):
     messages.success(request, 'You have successfully made a donation payment!')
     return redirect('index')   
 
-@csrf_protect
+
+@requires_csrf_token
 def paypal_cancel(request):
     messages.error(request, 'Your donation payment was cancelled.')
     return redirect('index')
 
-@csrf_protect
+
+@requires_csrf_token
 def confirm_payment(request, pk):
     order = Order.objects.get(id=pk)
     order.completed = True 
     order.save()
     messages.success(request, "Payment made successfully")
 
-@csrf_protect
+
+@requires_csrf_token
 def initiate_payment(request: HttpRequest) -> HttpResponse:
     if request.method == "POST": 
         payment_form = forms.PaymentForm(request.POST)
@@ -80,7 +84,8 @@ def initiate_payment(request: HttpRequest) -> HttpResponse:
         payment_form = forms.PaymentForm()
     return render(request, 'initiate_payment.html', {'payment_form': payment_form})            
 
-@csrf_protect
+
+@requires_csrf_token
 def verify_payment(request: HttpRequest, ref:str) -> HttpResponse:
     payment = get_object_or_404(Payment, ref=ref)
     verified = payment.verify_payment()

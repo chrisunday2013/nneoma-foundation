@@ -960,7 +960,7 @@ section {
 --------------------------------------------------------------*/
 .services .icon-box {
   text-align: center;
-  border: 1px solid #e5f0d5;
+  border: 3px solid #e5f0d5;
   padding: 80px 20px;
   transition: all ease-in-out 0.3s;
   background: #fff;
@@ -972,7 +972,7 @@ section {
   height: 64px;
   background: #f3f8ec;
   border-radius: 50px;
-  border: 1px solid #d6e8bf;
+  border: 3px solid #d6e8bf;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1388,18 +1388,18 @@ section {
 }
 
 .pricing .box h3 {
-  font-weight: 400;
+  font-weight: 300;
   padding: 15px;
   margin-top: 15px;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 300;
   color: #353535;
 }
 
 .pricing .box h4 {
   font-size: 42px;
   color: #8fc04e;
-  font-weight: 500;
+  font-weight: 300;
   font-family: "Open Sans", sans-serif;
   margin-bottom: 20px;
 }
@@ -1452,9 +1452,9 @@ section {
   border: 2px solid #8fc04e;
   color: #8fc04e;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 300;
   font-family: "Raleway", sans-serif;
-  font-weight: 600;
+  font-weight: 300;
   transition: 0.3s;
 }
 
