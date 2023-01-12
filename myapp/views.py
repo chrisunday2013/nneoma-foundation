@@ -31,8 +31,8 @@ def index(request):
     portfolios=Portfolio.objects.all()
     teams=Team.objects.all()
 
-
     return render(request, 'index.html' , {'testimonials': testimonials, "portfolios":portfolios, "teams": teams})
+
 
 @requires_csrf_token
 def home(request):

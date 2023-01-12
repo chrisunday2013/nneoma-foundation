@@ -34,7 +34,7 @@
                 <div class="col-12">
                     <h5>Make payment for: Naira {{payment.amount}} </h5>
                     <hr>
-                    
+                        {% csrf_token %}
                         <script src="https://js.paystack.co/v1/inline.js"></script> 
                         <button class="btn btn-large btn-success" onclick="PayWithPayStack()" id="django-paystack-button">Make Payment</button>
                 
