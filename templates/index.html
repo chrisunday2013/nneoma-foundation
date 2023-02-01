@@ -291,11 +291,7 @@
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
 
-          
-       
-        
-
-          {% for portfolio in portfolios %}
+        {% for portfolio in portfolios %}
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <img src="{{portfolio.image.url}}"  class="img-fluid" alt="">
             <div class="portfolio-info">
@@ -304,6 +300,7 @@
           </div>
           {% endfor %}
         </div>
+        
 
       </div>
     </section><!-- End Portfolio Section -->
